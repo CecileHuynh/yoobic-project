@@ -1,14 +1,15 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {IonicModule} from '@ionic/angular';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {RouterModule, Routes} from '@angular/router';
+import {Routes, RouterModule} from '@angular/router';
+import {IonicModule} from '@ionic/angular';
 import {HomePage} from './home.page';
 
 const routes: Routes = [
   {path: '', redirectTo: 'welcome', pathMatch: 'full'},
   {path: 'welcome', component: HomePage},
 ]
+
 
 @NgModule({
   imports: [
@@ -17,7 +18,7 @@ const routes: Routes = [
     IonicModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forChild(routes),
+    RouterModule.forChild(routes)
   ],
   declarations: [HomePage]
 })

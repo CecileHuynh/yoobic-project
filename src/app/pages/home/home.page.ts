@@ -1,19 +1,20 @@
 import {Component} from '@angular/core';
 import {FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
-import {Constants} from '../constants';
 import {NavController} from '@ionic/angular';
+import {ToastController} from '@ionic/angular';
+import {Constants} from 'src/app/constants';
 
 @Component({
   selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  templateUrl: './home.page.html',
+  styleUrls: ['./home.page.scss'],
 })
 export class HomePage {
   public loginForm: FormGroup;
   public passwordType = 'password';
   public passwordIcon = 'eye';
 
-  constructor(private formBuilder: FormBuilder, private navCtrl: NavController) {
+  constructor(private formBuilder: FormBuilder, private navCtrl: NavController, private toastCtrl: ToastController) {
     this.loginForm = this.formBuilder.group({
       email: new FormControl('', Validators.compose([
         Validators.required,
@@ -24,7 +25,6 @@ export class HomePage {
   }
 
   hideShowPassword() {
-    console.log("hel");
     this.passwordType = this.passwordType === 'text' ? 'password' : 'text';
     this.passwordIcon = this.passwordIcon === 'eye-off' ? 'eye' : 'eye-off';
   }
@@ -34,7 +34,22 @@ export class HomePage {
   }
 
   navigateToMissionList() {
-    this.navCtrl.navigateForward('/home');
+    if (this.loginForm.valid) {
+      this.navCtrl.navigateForward('/home/mission');
+    }
+    else {
+      this.showErrorMessage("Data are not correct or missing");
+    }
+  }
+
+  async showErrorMessage(message: string) {
+    const toast = await this.toastCtrl.create({
+      message,
+      duration: 3000,
+      position: 'bottom',
+      color: 'danger',
+    });
+    toast.present();
   }
 
 }
