@@ -1,1 +1,77 @@
+@import '../../global.scss';
 
+
+.welcome-page {
+    --background: linear-gradient(to bottom right,#dedee2, #55568c) !important;
+}
+
+.sign-in-item {
+    --background: transparent !important;
+}
+
+ion-input {
+    --background:rgb(230, 230, 232);
+    --color :$primary-font;
+    --padding-start: 15px !important;
+}
+
+.password-icon {
+    position: absolute;
+    right: 20px;
+    font-size: 20px;
+    z-index: 1000;
+}
+
+.title-page {
+    margin: 0 auto;
+    font-size: 30px;
+    font-weight: 600;
+    color:$primary-font
+}
+
+.title-div {
+    margin-top:50%;
+    margin-bottom:10%;
+}
+
+.forget-div {
+  margin-top:10px;
+  margin-left: 40%;  
+  color:$primary-font; 
+}
+
+.button-div {
+    text-align: center;
+    margin-top:20%;
+}
+
+ion-button {
+    width: 130px;
+
+    &.sign-up {
+        --background:transparent !important;
+        --background-activated: rgba(93,93,135, 0.2);
+        border: 2px solid #5d5d87;
+        border-radius: 64px;
+        position: absolute;
+        left: 10%;
+    }
+
+    &.sign-in {
+        --background:#5d5d87;
+        --background-activated:#414160;
+        position: absolute;
+        right: 10%;
+    }
+}
+
+.terms {
+    color :$primary-font;
+    margin: 0 auto;
+}
+
+.terms-div {
+    position: absolute;
+    bottom: 5%;
+    left: 30%;
+}
