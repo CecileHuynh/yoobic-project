@@ -1,8 +1,8 @@
-import {Component} from '@angular/core';
-import {FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
-import {NavController} from '@ionic/angular';
-import {ToastController} from '@ionic/angular';
-import {Constants} from 'src/app/constants';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { NavController } from '@ionic/angular';
+import { ToastController } from '@ionic/angular';
+import { Constants } from 'src/app/constants';
 
 @Component({
   selector: 'app-home',
@@ -35,7 +35,7 @@ export class HomePage {
 
   navigateToMissionList() {
     if (this.loginForm.valid) {
-      this.navCtrl.navigateForward('/home/mission');
+      this.navCtrl.navigateForward('/menu/blank');
     }
     else {
       this.showErrorMessage("Data are not correct or missing");

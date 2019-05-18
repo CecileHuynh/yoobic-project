@@ -2,15 +2,27 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-
 import { IonicModule } from '@ionic/angular';
-
 import { MenuPage } from './menu.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: MenuPage
+    component: MenuPage,
+    children: [
+      {
+        path: 'mission',
+        loadChildren: '../mission/mission.module#MissionPageModule'
+      },
+      {
+        path: 'blank',
+        loadChildren: '../blank/blank.module#BlankPageModule'
+      },
+    ]
+  },
+  {
+    path: '',
+    redirectTo: '/menu/blank',
   }
 ];
 
@@ -23,4 +35,4 @@ const routes: Routes = [
   ],
   declarations: [MenuPage]
 })
-export class MenuPageModule {}
+export class MenuPageModule { }

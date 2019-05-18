@@ -1,9 +1,26 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>menu</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
-</ion-content>
+<ion-split-pane>
+  <ion-menu contentId="content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle auto-hide="false">
+          <div *ngFor="let page of pages">
+            <ion-item [routerLink]="page.url" routerDirection="forward" [class.active-item]="selectedPath === page.url">
+              {{page.title}}
+            </ion-item>
+          </div>
+          <div>
+            <ion-item lines="none" [routerLink]="logout" routerDirection="backward">
+              <ion-icon name="log-out"></ion-icon>
+            </ion-item>
+          </div>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="content" main></ion-router-outlet>
+</ion-split-pane>
