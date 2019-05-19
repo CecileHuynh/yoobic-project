@@ -18,6 +18,10 @@ const routes: Routes = [
         path: 'dashboard',
         loadChildren: '../dashboard/dashboard.module#DashboardPageModule'
       },
+      {
+        path: 'details',
+        loadChildren: '../details/details.module#DetailsPageModule'
+      },
     ]
   },
   {

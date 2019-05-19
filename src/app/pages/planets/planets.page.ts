@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PlanetsService, Planet, PlanetsResponse } from './planets.service';
-import { ToastController } from '@ionic/angular';
+import { ToastController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-planets',
@@ -11,7 +11,7 @@ export class PlanetsPage {
   planets: Planet[] = [];
   imgPlanet = '../../../assets/img/planet-picture.png';
 
-  constructor(private service: PlanetsService, private toastCtrl: ToastController) {
+  constructor(private service: PlanetsService, private toastCtrl: ToastController, private navCtrl: NavController) {
     this.getPlanets();
   }
 
@@ -40,5 +40,9 @@ export class PlanetsPage {
       color: 'danger',
     });
     toast.present();
+  }
+
+  openDetailsPage(planet: Planet) {
+    this.navCtrl.navigateForward(['/menu/details'], { queryParams: planet });
   }
 }

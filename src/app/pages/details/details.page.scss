@@ -1,0 +1,19 @@
+@import '../../../global.scss';
+
+ion-button {
+    --background:transparent !important;
+}
+
+ion-menu-button{
+    color:$primary-font;
+}
+
+ion-title {
+    --color:$primary-font;
+}
+
+.field-name {
+    font-size:30px;
+    font-weight: 600;
+    color:$primary-font;
+}

@@ -9,8 +9,8 @@
 
 <ion-content>
   <ion-list>
-    <ion-item lines="none" *ngFor="let planet of planets">
-      <ion-card>
+    <ion-item lines="none" *ngFor="let planet of planets; let i=index">
+      <ion-card (click)="openDetailsPage(planet)">
         <ion-card-header>
           <ion-img [src]="imgPlanet"></ion-img>
           <ion-card-title>{{planet.name}}</ion-card-title>

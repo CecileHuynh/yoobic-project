@@ -14,6 +14,11 @@ export interface Planet {
     diameter: number;
     climate: string;
     population: number;
+    rotation_period: number;
+    orbital_period: number;
+    gravity: string;
+    terrain: string;
+    surface_water: number;
 }
 
 @Injectable({
