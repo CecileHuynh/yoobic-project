@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-button>
+    <ion-title>Planets</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item lines="none" *ngFor="let planet of planets">
+      <ion-card>
+        <ion-card-header>
+          <ion-img [src]="imgPlanet"></ion-img>
+          <ion-card-title>{{planet.name}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-grid>
+            <ion-row>
+              <ion-label class="field-name">Climate:</ion-label>
+              <ion-label class="field-value">{{planet.climate}}</ion-label>
+            </ion-row>
+            <ion-row>
+              <ion-label class="field-name">Diameter:</ion-label>
+              <ion-label class="field-value">{{planet.diameter}}</ion-label>
+            </ion-row>
+            <ion-row>
+              <ion-label class="field-name">Population:</ion-label>
+              <ion-label class="field-value">{{planet.population}}</ion-label>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -11,18 +11,18 @@ const routes: Routes = [
     component: MenuPage,
     children: [
       {
-        path: 'mission',
-        loadChildren: '../mission/mission.module#MissionPageModule'
+        path: 'planets',
+        loadChildren: '../planets/planets.module#PlanetsPageModule'
       },
       {
-        path: 'blank',
-        loadChildren: '../blank/blank.module#BlankPageModule'
+        path: 'dashboard',
+        loadChildren: '../dashboard/dashboard.module#DashboardPageModule'
       },
     ]
   },
   {
     path: '',
-    redirectTo: '/menu/blank',
+    redirectTo: '/menu/dashboard',
   }
 ];
 

@@ -11,3 +11,13 @@ ion-menu-button{
 ion-title {
     --color:$primary-font;
 }
+
+ion-card-title {
+    color:$primary-font;
+}
+
+.field-name {
+    width: 100px;
+    color:$primary-font;
+    font-weight: 500;
+}

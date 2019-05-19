@@ -35,7 +35,7 @@ export class HomePage {
 
   navigateToMissionList() {
     if (this.loginForm.valid) {
-      this.navCtrl.navigateForward('/menu/blank');
+      this.navCtrl.navigateForward('/menu/dashboard');
     }
     else {
       this.showErrorMessage("Data are not correct or missing");
